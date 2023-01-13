@@ -3,6 +3,7 @@ import 'package:madufitter/login/components/login_background.dart';
 import 'package:madufitter/login/components/password_field.dart';
 import 'package:madufitter/view/custom_widgets/custom_button.dart';
 import 'package:madufitter/view/custom_widgets/my_theme.dart';
+import 'package:madufitter/view/signup/signup_page.dart';
 
 import 'components/textfield_decorator.dart';
 import 'components/user_id_text_field.dart';
@@ -57,7 +58,7 @@ class LoginPage extends StatelessWidget {
                         userIdPrefixIcon: userIdPrefixIcon,
                         userIdPrefixIconColor: userIdPrefixIconColor,
                         onUserIdValueChange: (value) {
-                          print(value);
+                          //print(value);
                         },
                       ),
                     ),
@@ -82,22 +83,27 @@ class LoginPage extends StatelessWidget {
                         buttonText: "Login",
                         textColor: MyTheme.loginBoxColor,
                         handleButtonClick: () {
-                          print('Login');
+                          //print('Login');
                         }),
                     const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text('Dont have account ?',style: TextStyle(fontWeight: FontWeight.bold),),
-                        SizedBox(
+                      children: [
+                        const Text('Dont have account ?',style: TextStyle(fontWeight: FontWeight.bold),),
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              fontSize: 13, fontWeight: FontWeight.bold),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpPage()));
+                          },
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ],
                     )

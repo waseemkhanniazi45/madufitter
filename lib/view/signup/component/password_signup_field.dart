@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:madufitter/view/custom_widgets/my_theme.dart';
 
-class UserPassTextField extends StatefulWidget {
-  const UserPassTextField({
+class SignUpPassTextField extends StatefulWidget {
+  const SignUpPassTextField({
     Key? key,
     required this.userPassController,
     required this.userPassErrorText,
@@ -26,10 +26,10 @@ class UserPassTextField extends StatefulWidget {
   final Function onUserPassValueChange;
 
   @override
-  State<UserPassTextField> createState() => _UserPassTextFieldState();
+  State<SignUpPassTextField> createState() => _SignUpPassTextFieldState();
 }
 
-class _UserPassTextFieldState extends State<UserPassTextField> {
+class _SignUpPassTextFieldState extends State<SignUpPassTextField> {
   bool isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,6 @@ class _UserPassTextFieldState extends State<UserPassTextField> {
           color: widget.userPassSuffixIconColor,
           onPressed: () {
             setState(() {
-              debugPrint('isPasswordVisible}');
               isPasswordVisible = !isPasswordVisible;
             });
           },

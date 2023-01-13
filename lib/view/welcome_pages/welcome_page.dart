@@ -1,6 +1,9 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:madufitter/login/login_page.dart';
 import 'package:madufitter/view/custom_widgets/my_theme.dart';
+import 'package:madufitter/view/signup/signup_page.dart';
 
 import '../custom_widgets/background.dart';
 import '../custom_widgets/custom_button.dart';
@@ -42,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                   buttonColor: MyTheme.textColor,
                   buttonText: "SIGN UP",
                   textColor: Theme.of(context).colorScheme.onPrimary,
-                  handleButtonClick: signUpButtonHandlerClick),
+                  handleButtonClick: (){signUpButtonHandlerClick(context);}),
             ],
           ),
         ),
@@ -55,7 +58,7 @@ loginButtonHandlerClick(BuildContext context) {
   Navigator.push(context, MaterialPageRoute(builder:  (context)=>LoginPage()));
   //print('tapped');
 }
-signUpButtonHandlerClick(){
-  //print('tapped');
+signUpButtonHandlerClick(context){
+  Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpPage()));
 }
 }
